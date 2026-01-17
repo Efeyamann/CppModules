@@ -1,0 +1,26 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
+#include <iostream>
+#include "Contact.hpp"
+
+class PhoneBook
+{
+	private:
+		Contact contacts[8];
+		int currentIndex = 0;
+	
+	public:
+		PhoneBook();
+		~PhoneBook();
+		
+		int getIndex();
+		void setIndex(int currentIndex);
+		void add_contact();
+		void search_contact();
+};
+
+
+
+
+#endif
