@@ -13,6 +13,11 @@ int main()
 	{
 		std::cout << "Please enter which operation you want to do(ADD, SEARCH, EXIT): " << std::endl;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+        {
+            std::cout << "Exiting Program" << std::endl;
+            break;
+        }
 		if(input.compare("ADD") == 0)
 		{
 			phonebook.add_contact();

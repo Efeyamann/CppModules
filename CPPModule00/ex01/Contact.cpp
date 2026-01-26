@@ -1,12 +1,13 @@
 #include "Contact.hpp"
 
+	Contact::Contact(){}
+	Contact::~Contact(){}
 
-
-	std::string Contact::get_fname() {return first_name;}
-	std::string Contact::get_lname() {return last_name;}
-	std::string Contact::get_nickname() {return nickname;}
-	std::string Contact::get_phone_number() {return phone_number;}
-	std::string Contact::get_darkest_secret() {return darkest_secret;}
+	std::string Contact::get_fname() const {return first_name;}
+	std::string Contact::get_lname() const {return last_name;}
+	std::string Contact::get_nickname() const {return nickname;}
+	std::string Contact::get_phone_number() const {return phone_number;}
+	std::string Contact::get_darkest_secret() const {return darkest_secret;}
 
 	void Contact::set_fname(std::string first_name) {this->first_name = first_name;}
 	void Contact::set_lname(std::string last_name) {this->last_name = last_name;}

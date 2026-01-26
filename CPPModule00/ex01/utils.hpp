@@ -2,12 +2,11 @@
 #define UTILS_HPP
 
 #include <iostream>
+#include <iomanip>
 
-	std::string read_fname();
-	std::string read_lname();
-	std::string read_nickname();
-	std::string read_phone_number();
-	std::string read_darkest_secret();
-
+	std::string get_input(std::string prompt);
+	std::string format_text(std::string text);
+	bool is_digits(std::string &str);
+	bool is_alpha(std::string &str);
 
 #endif

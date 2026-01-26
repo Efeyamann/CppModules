@@ -1,41 +1,56 @@
-#include <utils.hpp>
+#include "utils.hpp"
 
-std::string read_fname()
+std::string get_input(std::string prompt)
 {
-    std::string input;
-    std::cout << "Enter First Name: ";
-    std::getline(std::cin, input);
-    return input;
+    std::string input = "";
+
+    while (true)
+    {
+        std::cout << prompt;
+        std::getline(std::cin, input);
+
+        if (std::cin.eof())
+        {
+			return ""; 
+        }
+        if (input.empty())
+        {
+            std::cout << "Field cannot be empty." << std::endl;
+            continue;
+        }
+        return input;
+    }
 }
 
-std::string read_lname()
+std::string format_text(std::string text)
 {
-    std::string input;
-    std::cout << "Enter Last Name: ";
-    std::getline(std::cin, input);
-    return input;
+	if (text.length() > 10)
+		return text.substr(0, 9) + ".";
+	return text;
 }
 
-std::string read_lname()
+bool is_digits(std::string &str)
 {
-    std::string input;
-    std::cout << "Enter Nickname: ";
-    std::getline(std::cin, input);
-    return input;
+	size_t i = 0;
+    if (str.empty()) return false;
+    while (i < str.length())
+	{
+        if (!std::isdigit(str[i])) 
+			return false;
+		i++;
+    }
+    return true;
 }
 
-std::string read_lname()
+bool is_alpha(std::string &str)
 {
-    std::string input;
-    std::cout << "Enter Phone Number: ";
-    std::getline(std::cin, input);
-    return input;
-}
-
-std::string read_lname()
-{
-    std::string input;
-    std::cout << "Enter Darkest Secret: ";
-    std::getline(std::cin, input);
-    return input;
+	size_t i = 0;
+    if (str.empty()) return false;
+    while (i < str.length())
+	{
+        if (!std::isalpha(str[i])) 
+			return false;
+		i++;
+    }
+    return true;
 }

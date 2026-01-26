@@ -16,11 +16,11 @@ class Contact
 		Contact();
 		~Contact();
 
-		std::string get_fname();
-		std::string get_lname();
-		std::string get_nickname();
-		std::string get_phone_number();
-		std::string get_darkest_secret();
+		std::string get_fname() const;
+		std::string get_lname() const;
+		std::string get_nickname() const;
+		std::string get_phone_number() const;
+		std::string get_darkest_secret() const;
 
 		void set_fname(std::string first_name);
 		void set_lname(std::string last_name);
@@ -29,7 +29,5 @@ class Contact
 		void set_darkest_secret(std::string darkest_secret);
 
 };
-
-
 
 #endif
