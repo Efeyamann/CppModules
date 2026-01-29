@@ -24,12 +24,18 @@ class Fixed
     public:
         Fixed();
         Fixed(const Fixed &src);
+		Fixed(const int number);
+		Fixed(const float number);
         Fixed &operator=(const Fixed &rhs);
         ~Fixed();
 
+		float toFloat() const;
+		int toInt() const;
         int getRawBits(void) const;
         void setRawBits(int const raw);
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 
 #endif
